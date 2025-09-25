@@ -66,8 +66,7 @@ int main () {
 
     cout << "Your updated game life using lifeUpPostIncrement() is: " << lifeUpPostIncrement() << endl; /* Output is 3, 4, 5 because first value is returned and AFTER that value is incremented. */
 
-
-
+    
 
 	return 0;
 
