@@ -17,9 +17,25 @@ C++ prefers const or constexpr keywords for defining typed, scoped, and safer co
 */
 #define PI 3.14
 
+/* Use of ENUMS */
+
+/* Define an enum using the enum keyword, then list your named constants separated by commas. By default, LOW is 0, MEDIUM is 1, and HIGH is 2, but you can assign specific integer values as well. */
+
+enum Level { LOW, MEDIUM, HIGH };
+
+enum TextTypes {BOLD = 20, ITALICS = 40, UNDERLINE};
+
+
 int main () {
 
-	
+	Level myLevel = Level::MEDIUM;
+
+	cout << "Level myLevel = Level::MEDIUM -> " << myLevel << endl;
+
+	cout << "Level::LOW = " << Level::LOW << "; Level::MEDIUM = " << Level::MEDIUM << "; Level::HIGH = " << Level::HIGH << ";\n";
+
+	cout << "TextTypes::BOLD = " << TextTypes::BOLD << "; TextTypes::ITALICS = " << ITALICS << "; TextTypes::UNDERLINE = " << UNDERLINE << ";\n";
+		
 
 	return 0;
 
