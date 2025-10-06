@@ -58,7 +58,7 @@ class User{
             Again, for built-in types, returning a const value is not meaningful.
 
         4. const int& getSecret(){return _secret}
-            A constant reference is returned. The returned reference is an alias to the internal private _secret variable. Without const in function return type, local_var_secret can be used to modify member variable _secret. But presence of const keyword prevents this. 
+            A constant reference is returned. The returned reference is an alias to the internal private _secret variable. Changing the alias also changes the value of _secret.
 
             Eg - 
             void main(){
