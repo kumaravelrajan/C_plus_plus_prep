@@ -38,13 +38,16 @@ int main () {
     {
         /* Seperate scope starts */
 
-        /* Method 1 of creating unique ptr */
+        /* Method 1 of creating unique ptr (less preferred) */
         unique_ptr<User> unique_ptr_for_class_user(new User());
 
-        /* Method 2 of creating unique ptr */
+        /* Method 2 of creating unique ptr (more preferred method)*/
 
         unique_ptr<User> unique_ptr_for_class_user_2 = make_unique<User>();
         unique_ptr_for_class_user_2-> testFunction();
+
+        // User* copy_ptr = unique_ptr_for_class_user_2; --> NOT OK because we used unique ptr
+        // unique_ptr<User> copy_ptr_2 = unique_ptr_for_class_user_2; --> NOT OK because we used unique ptr
 
         /* Both user objects get destroyed automatically when execution exits the scope even though we did not call delete keyword explicitly. */
     }
