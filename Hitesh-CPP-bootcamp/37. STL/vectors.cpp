@@ -32,6 +32,26 @@ int main () {
 
     cout << endl;
 
+    /* Alternative 1 */
+
+    cout << "int_vector = ";
+
+    for(auto i = int_vector.begin(); i != int_vector.end(); ++i){
+        cout << *i << " ";
+    }
+
+    cout << endl;
+
+    /* Alternative 2 */
+
+    cout << "int_vector = ";
+
+    for(auto i = begin(int_vector); i != end(int_vector); ++i){
+        cout << *i << " ";
+    }
+
+    cout << endl;
+
 
 
 	return 0;
