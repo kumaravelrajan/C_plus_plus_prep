@@ -14,3 +14,4 @@ If p had been a char*, then the system would have only looked at one byte.
 
 Even if p had been a float* ```a```'s value would not have been retrieved correctly since the way floats and ints are stored are not the same. 
 
+This is explained [here](/pointers_in_cpp/code/2_strong_typing_pointers_and_void_pointer.cpp).
