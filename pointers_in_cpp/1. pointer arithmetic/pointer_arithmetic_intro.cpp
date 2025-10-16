@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
 
+    /* int type */
     int a = 10;
     int *p = &a;
 
@@ -13,6 +14,15 @@ int main(){
     cout << "p = " << p << endl; /* 0x7fffffffdabc */
     cout << "Size of int  = " << sizeof(int) << endl; /* 4 */
     cout << "p + 1 = " << p + 1 << endl;  /* 0x7fffffffdac0 = 0x7fffffffdabc + 4 */
+
+    /* char type */
+
+    float f = 8.5;
+    float* p_float = &f;
+
+    cout << "p_float = " << p_float << endl; /* 0x7fffffffdab4 */
+    cout << "size of float = " << sizeof(float) << endl; /* 4 */
+    cout << "p_float + 1 = " << p_float + 1 << endl; /* 0x7fffffffdab8 */
 
     return 0;
 }
