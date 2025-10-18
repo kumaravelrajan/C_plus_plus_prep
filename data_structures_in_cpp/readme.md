@@ -59,5 +59,40 @@ Data types are spoken about in two ways -
 
         1. Reading elements at a position is still O(1) though. This property is characteristic of arrays. 
 
-## Linked list to implement dynamic lists
+## Limitations of using array to implemenet dynamic lists
 
+We initially declare an array of size 4. Arrays are always contiguously allocated. This is why accessing elements in array is O(1) time. 
+
+![](/data_structures_in_cpp/images/1_array_impl_of_dynamic_list.png)
+
+But when we want to add new elements, we have a problem. We need to allocate a new array altogether because the memory just after our original array is blocked for variable x. Hence, memory manager allocates new larger array and copies contents of old array into new array. 
+
+![](/data_structures_in_cpp/images/2_reallocating_array.png)
+
+This array maybe larger but still suffers from the same problems as earlier. If too few elements present, memory wasted. If too much elements present a new larger array again has to be created and contents copied from old array to new array. 
+
+This is where linked lists come in. 
+
+## Linked lists
+
+![](/data_structures_in_cpp/images/3_linked_list_intro.png)
+
+Access takes O(n) because the element has to be traversed starting from head position. 
+
+Insertion also takes O(n). Even though the actual insertion operation is quite a simple operation (unlike Arrays where there was creation of new larger array and copy of contents from old to new array involved) but still the position where we to make the insertion has to be traversed to by starting from the head position. This takes O(n). Hence, insertion also is O(n).
+
+## Array vs Linked lists to implement dynamic lists
+
+|Property|Array|Linked list|
+|-|-|-|
+|Accessing element|O(1)|O(n)|
+|Inserting element| at beginning: O(n) | At beginning: O(1) |
+|  | In the middle: O(n) | In the middle: O(n) |
+|  | At the end when array NOT full: O(1) | At the end: O(n) |
+|  | At the end when array full: O(n) | N/A |
+
+The complexities for deletion are the same as insertion. 
+
+## Implementing linked lists
+
+![Click here to see implementation of linked lists in C++](/data_structures_in_cpp/code/1_linked_list_implementation.cpp)
