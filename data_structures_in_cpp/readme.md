@@ -95,5 +95,5 @@ The complexities for deletion are the same as insertion.
 
 ## Implementing linked lists
 
-![Click here to see implementation of linked lists in C++](/data_structures_in_cpp/code/linked_list_implementation/1_linked_list_implementation.cpp)
+![Click here](/data_structures_in_cpp/code/linked_list_implementation/1_linked_list_implementation.cpp)  to see implementation of linked lists in C++.
 
