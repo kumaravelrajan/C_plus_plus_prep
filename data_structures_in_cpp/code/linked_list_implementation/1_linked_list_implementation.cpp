@@ -69,6 +69,7 @@ struct LinkedList{
 
             if(position_to_add_value_in == 0){
                 add_element_to_beginning(value_to_add);
+                return;
             }
 
             /* Find number of elements in the list */
@@ -79,6 +80,7 @@ struct LinkedList{
 
             if(position_to_add_value_in == (number_of_elements_in_list + 1)){
                 add_element_to_tail(value_to_add);
+                return;
             }
 
             if(position_to_add_value_in <= number_of_elements_in_list){
@@ -104,16 +106,20 @@ struct LinkedList{
 
                 prev_temp->next_node = move(temp_obj_new_value);
 
+                print_linked_list();
+
+                return;
+
             } else {
                 cout << "Adding in middle failed\n";
+                return;
             }
 
         } else {
             cout << "Adding in middle failed\n";
+            return;
 
         }
-
-        print_linked_list();
     }
 
     void remove_element_at_head(){     
@@ -193,6 +199,12 @@ int main(){
     linked_list_obj.add_element_to_tail(3);
 
     linked_list_obj.add_element_in_middle(7, 2);
+
+    linked_list_obj.add_element_in_middle(15, 0);
+
+    linked_list_obj.add_element_in_middle(30, 5);
+
+    linked_list_obj.add_element_in_middle(30, 7);
 
     linked_list_obj.remove_element_at_head();
 
