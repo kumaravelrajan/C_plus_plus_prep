@@ -4,20 +4,20 @@
 
 using namespace std;
 
-struct Node{
+    struct Node{
 
-    int data;
-    std::unique_ptr<Node> next_node;
+        int data;
+        std::unique_ptr<Node> next_node;
 
-    Node(int input_data){
-        data = input_data;
-        next_node = nullptr;
-    }
+        Node(int input_data){
+            data = input_data;
+            next_node = nullptr;
+        }
 
-    ~Node(){
-        cout << "Node object destroyed\n";
-    }
-};
+        ~Node(){
+            cout << "Node object destroyed\n";
+        }
+    };
 
 struct LinkedList{
 
@@ -56,6 +56,61 @@ struct LinkedList{
             
         } else {
             head = make_unique<Node>(value_to_add);
+        }
+
+        print_linked_list();
+    }
+
+    void add_element_in_middle(int value_to_add, int position_to_add_value_in){
+        
+        /* Confirm head is not empty.  */
+
+        if(head){
+
+            if(position_to_add_value_in == 0){
+                add_element_to_beginning(value_to_add);
+            }
+
+            /* Find number of elements in the list */
+            int number_of_elements_in_list = -1;
+            for(const Node* temp = head.get(); temp != nullptr ; temp = temp->next_node.get()){
+                number_of_elements_in_list++;
+            }
+
+            if(position_to_add_value_in == (number_of_elements_in_list + 1)){
+                add_element_to_tail(value_to_add);
+            }
+
+            if(position_to_add_value_in <= number_of_elements_in_list){
+
+                Node* prev_temp;
+                int current_position_in_list = 0;
+                Node* temp = head.get();
+
+                for(; temp->next_node != nullptr ; temp = temp->next_node.get()){
+
+                    if(current_position_in_list < position_to_add_value_in){
+                        prev_temp = temp;
+                        current_position_in_list++;
+                    } else {
+                        break;
+                    }
+                }
+
+                unique_ptr<Node> temp_obj_new_value = make_unique<Node>(value_to_add);
+                temp_obj_new_value->next_node = move(prev_temp->next_node);
+                
+                //* temp_obj_new_value->next_node = std::unique_ptr<Node>(temp); --> NOTE: Error. Because object owned by temp here is already owned by a unique_ptr (either head or another unique_ptr as temp traverses through the list). We attempt to assign the object owned by temp to another unique_ptr temp_obj_new_value. This creates double ownership. When either unique_ptr gets deleted the coressponding Node object also gets deleted.  
+
+                prev_temp->next_node = move(temp_obj_new_value);
+
+            } else {
+                cout << "Adding in middle failed\n";
+            }
+
+        } else {
+            cout << "Adding in middle failed\n";
+
         }
 
         print_linked_list();
@@ -136,6 +191,8 @@ int main(){
     linked_list_obj.add_element_to_beginning(1);
     linked_list_obj.add_element_to_tail(2);
     linked_list_obj.add_element_to_tail(3);
+
+    linked_list_obj.add_element_in_middle(7, 2);
 
     linked_list_obj.remove_element_at_head();
 
