@@ -177,6 +177,41 @@ struct LinkedList{
         print_linked_list();
     }
 
+    void remove_element_in_middle(int position_to_remove){
+
+        if(position_to_remove == 0){
+            remove_element_at_head();
+            return;
+        }
+
+        int number_of_elements_in_list = 0;
+
+        for(Node* temp = head.get(); temp != nullptr; temp = temp->next_node.get()){
+            number_of_elements_in_list++;
+        }
+
+        if(position_to_remove > (number_of_elements_in_list - 1)){
+            cout << "Removal failed.\n";
+            return;
+        } else {
+
+            int current_position_in_list = -1;
+            Node* prev_temp;
+            for(Node* temp = head.get(); temp->next_node != nullptr; temp = temp->next_node.get()){
+                current_position_in_list++;
+                
+                if(current_position_in_list == position_to_remove){
+                    prev_temp->next_node = move(temp->next_node);
+                    print_linked_list();
+                    return;
+                }
+
+                prev_temp = temp;
+            }
+        }
+
+    }
+
     void print_linked_list(){
 
         cout << "#####################################################################################\n";
@@ -206,6 +241,12 @@ int main(){
 
     linked_list_obj.add_element_in_middle(30, 7);
 
+    linked_list_obj.remove_element_in_middle(2);
+
+    linked_list_obj.remove_element_in_middle(3);
+
+    linked_list_obj.remove_element_in_middle(4);
+    
     linked_list_obj.remove_element_at_head();
 
     linked_list_obj.remove_element_at_tail();
