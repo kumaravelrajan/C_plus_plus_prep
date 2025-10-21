@@ -115,13 +115,20 @@ The complexities for deletion are the same as insertion.
 
 # Big O Analysis
 
-1. Big-O is worst case analysis. 
+## Big-O is worst case analysis. 
 
-    Ordered by fastest to slowest speeds with O(1) being the fastest.
+![Big-O analysis](/data_structures_in_cpp/images/4_bigo.jpg)
 
-    1. O(1) - constant
-    1. O(log n) - logarithmic
-    1. O(n) - linear
-    1. O(n^2) - Polynomial
-    1. O(2^n) - Exponential
+Ordered by fastest to slowest speeds with O(1) being the fastest.
+
+1. O(1) - constant
+1. O(log n) - logarithmic
+1. O(n) - linear
+1. O(n^2) - Polynomial
+1. O(2^n) - Exponential
+1. O(n!) - factorial
+
+## O(n)
+
+
 
