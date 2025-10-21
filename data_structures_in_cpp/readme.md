@@ -1,3 +1,5 @@
+# Data structures in C/C++ from freecodecamp
+
 Video link - [here](https://youtu.be/B31LgI4Y4DQ?si=oa6n955r3aYjZmtW). 
 
 # What is a data structure?
@@ -95,5 +97,31 @@ The complexities for deletion are the same as insertion.
 
 ## Implementing linked lists
 
-![Click here](/data_structures_in_cpp/code/linked_list_implementation/1_linked_list_implementation.cpp)  to see implementation of linked lists in C++.
+[Click here](/data_structures_in_cpp/code/linked_list_implementation/1_linked_list_implementation.cpp)  to see implementation of linked lists in C++.
+
+---
+
+**Decided to stop this video midway and switch to the following video from Boot.dev. Reason being that the boot dev course was shorter and newer. If something from the above video needs to be learnt I will come back here.**
+
+---
+
+# Data structures and algorithms form Boot.dev
+
+[Video Link click here](https://youtu.be/DMeD8trbj6A?si=I9h2cXmH2vmIg9jI)
+
+# Math
+
+1. Factorials (grow faster than) Exponentials (grow faster than) Linear.
+
+# Big O Analysis
+
+1. Big-O is worst case analysis. 
+
+    Ordered by fastest to slowest speeds with O(1) being the fastest.
+
+    1. O(1) - constant
+    1. O(log n) - logarithmic
+    1. O(n) - linear
+    1. O(n^2) - Polynomial
+    1. O(2^n) - Exponential
 
