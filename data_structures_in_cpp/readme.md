@@ -128,7 +128,3 @@ Ordered by fastest to slowest speeds with O(1) being the fastest.
 1. O(2^n) - Exponential
 1. O(n!) - factorial
 
-## O(n)
-
-
-
